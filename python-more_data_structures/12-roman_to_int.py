@@ -9,9 +9,9 @@ def roman_to_int(roman_string):
     prev_value = 0
     for char in reversed(roman_string):
         value = roman_numbers[char]
-        if value > prev_value:
-            total += value
-        else:
+        if value < prev_value:
             total -= value
+        else:
+            total += value
         prev_value = value
     return total
