@@ -7,8 +7,6 @@ def roman_to_int(roman_string):
         return 0
     total, prev_value = 0
     for char in roman_string:
-        if char not in roman_numbers:
-            return 0
         value = roman_numbers[char]
         if value > prev_value:
             total += value - 2 * prev_value
