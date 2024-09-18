@@ -27,6 +27,7 @@ class Square:
         return self.__size * self.__size
 
     def my_print(self):
+        """Prints a square with the character '#' based on the size of the square"""
         if self.__size == 0:
             print("")
         for index in range(self.__size):
