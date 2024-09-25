@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Shebang line indicating the interpreter for the script."""
+"""Shebang line indicating the interpreter for the script"""
 
 
 def is_same_class(obj, a_class):
