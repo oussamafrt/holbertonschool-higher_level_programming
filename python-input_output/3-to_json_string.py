@@ -7,4 +7,4 @@ import json
 
 def to_json_string(my_obj):
     """Function that return a text file"""
-    return to_json_string(my_obj)
+    return json.dumps(my_obj)
