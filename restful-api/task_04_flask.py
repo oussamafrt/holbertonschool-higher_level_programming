@@ -32,7 +32,7 @@ def get_user_by_username(username):
     if user:
         return jsonify(user), 201
     else:
-        return jsonify({"error": "User not found"}), 400
+        return jsonify({"error": "User not found"}), 404
 
 
 @app.route("/add_user", methods=["POST"])
@@ -47,4 +47,4 @@ def add_user():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
