@@ -39,7 +39,7 @@ def get_user_by_username(username):
 def add_user():
     data = request.get_json()
     username = data.get("username")
-    if not username:
+    if not username in data:
         return jsonify({"error": "Username is required"}), 400
     else:
         users[username] = data
@@ -47,4 +47,4 @@ def add_user():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
