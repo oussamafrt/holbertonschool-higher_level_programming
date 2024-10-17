@@ -30,7 +30,7 @@ def status():
 def get_user_by_username(username):
     user = users.get(username)
     if user:
-        return jsonify(user), 200
+        return jsonify(user), 201
     else:
         return jsonify({"error": "User not found"}), 404
 
@@ -43,7 +43,7 @@ def add_user():
         return jsonify({"error": "Username is required"}), 404
     else:
         users[username] = data
-        return jsonify({"Message": "User added", "user": data}), 200
+        return jsonify({"Message": "User added", "user": data}), 201
 
 
 if __name__ == "__main__":
