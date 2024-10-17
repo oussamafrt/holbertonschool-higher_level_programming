@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, json
 app = Flask(__name__)
 users = {}
 
@@ -42,4 +42,4 @@ def add_user():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
