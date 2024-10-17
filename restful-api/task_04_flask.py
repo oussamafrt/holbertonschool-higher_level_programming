@@ -21,11 +21,11 @@ def status():
     return "OK"
 
 
-@app.route("/users/<username>", methods=["GET"])
+@app.route("/users/<username>")
 def get_user_by_username(username):
     user = users.get(username)
     if user:
-        return jsonify(user), 201
+        return jsonify(user)
     else:
         return jsonify({"error": "User not found"}), 404
 
