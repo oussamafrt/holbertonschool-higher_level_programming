@@ -5,6 +5,7 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 users = {}
 
+
 @app.route("/")
 def home():
     return "Welcome to the Flask API!"
@@ -33,7 +34,7 @@ def get_user_by_username(username):
 def add_user():
     data = request.get_json()
     username = data.get("username")
-    if not username in data:
+    if username not in data:
         return jsonify({"error": "Username is required"}), 400
     else:
         users[username] = data
