@@ -7,11 +7,7 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    """
-    The main entry point of the script.
-    Retrieves MySQL username, password, and database name from
-    command line arguments and calls list_states function.
-    """
+    """The main entry point of the script."""
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     mysql_db = sys.argv[3]

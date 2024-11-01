@@ -4,7 +4,7 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    """The main entry point of the script."""
+    """The main entry point of the script"""
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     mysql_db = sys.argv[3]

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""shebang"""
+"""shebang script"""
 
 import MySQLdb
 import sys
