@@ -1,28 +1,28 @@
 #!/usr/bin/python3
-"""
-This script lists all states from
-the database hbtn_0e_0_usa whith a name starting with N.
-"""
-import sys
+"""Shebang script"""
+
 import MySQLdb
+import sys
 
 if __name__ == "__main__":
     """The main entry point of the script."""
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    mysql_db = sys.argv[3]
-
     db = MySQLdb.connect(
-        host='localhost',
-        port=3306, user=sys.argv[1],
+        host="localhost",
+        port=3306,
+        user=sys.argv[1],
         passwd=sys.argv[2],
-        db=sys.argv[3])
+        db=sys.argv[3]
+    )
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+
     rows = cursor.fetchall()
+
     for row in rows:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
 
     cursor.close()
     db.close()

@@ -1,37 +1,29 @@
 #!/usr/bin/python3
-"""shebang script"""
+"""Shebang script"""
 
 import MySQLdb
 import sys
 
-def main():
+if __name__ == "__main__":
     """The main entry point of the script."""
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    state_name = sys.argv[4]
-
-
     db = MySQLdb.connect(
         host="localhost",
-        user=username,
-        passwd=password,
-        db=database,
-        port=3306
+        port=3306,
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
     )
 
     cursor = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(state_name)
-    cursor.execute(query)
+    cursor.execute("SELECT * FROM states WHERE name = '{}' \
+        ORDER BY id ASC".format(sys.argv[4]))
 
-    results = cursor.fetchall()
+    query_rows = cursor.fetchall()
 
-    for row in results:
-        print(row)
+    for row in query_rows:
+        if row[1] == sys.argv[4]:
+            print(row)
 
     cursor.close()
     db.close()
-
-if __name__ == "__main__":
-    main()
